@@ -16,19 +16,13 @@ jobs:
       with:
         dotnet-version: 3.1.301
     
-    - name: Restore dependencies
+    - name: Restore, Build, Test, Publish  
       run: |
         cd ghaction
-        dotnet restore
-    
-    - name: Build
-      run: dotnet build --no-restore
-    
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
-    
-    - name: dotnet publish
-      run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp 
+        dotnet restore   
+        dotnet build --no-restore
+        dotnet test --no-build --verbosity normal
+        dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp 
     
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
