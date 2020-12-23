@@ -1,4 +1,4 @@
-name: .NET B&D
+name: .NET B&D jvas
 
 on:
   workflow_dispatch:
