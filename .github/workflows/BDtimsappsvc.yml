@@ -27,8 +27,8 @@ jobs:
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
       with:
-        app-name: 'legacyplace'
+        app-name: 'ActionOne'
         #slot-name: 'production'        # production is default
         #publish-profile: ${{ secrets.AzureAppService_PublishProfile_b7e95b0480c3496685ef1362e0399c5d }}:  
-        publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}         
+        publish-profile: ${{ secrets.TR_PUBLISH_PROFILE }}         
         package: ${{env.DOTNET_ROOT}}/myapp 
